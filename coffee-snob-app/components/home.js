@@ -1,12 +1,18 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-
+import CafeList from './cafe';
 
 export default function home (){
 return (
-    <View style={styles.header}>
+    <View style={styles.container}>
+
+         <View style={styles.header}>
         <Text style={styles.title}>Coffee Snob</Text>
     </View>
+    <CafeList/>
+
+    </View>
+   
 );
 
 };
