@@ -17,9 +17,9 @@ const CafeCard = ({ cafe }) => {
 const styles= StyleSheet.create({
 
     card: {
-        flex: 1,
+        
         backgroundColor: '#fff',
-        borderRaidus: 10,
+        borderRadius: 10,
         shadowColor: '#000',
         shadowOffset: {width: 0, height: 2},
         shadowOpacity: 0.8,
@@ -34,10 +34,12 @@ const styles= StyleSheet.create({
         borderTopRightRadius: 10,
     },
     info: {
-        padding: 10,
+        padding: 50,
     },
     title: {
-        fontSize: 18,
+      
+        position: 'relative',
+        fontSize: 30,
         fontWeight: 'bold',
     },
     description: {

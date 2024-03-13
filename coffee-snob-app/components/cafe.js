@@ -1,6 +1,6 @@
 import React from 'react';
 import CafeCard from './CafeCard';
-import { ScrollView } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 
 export const cafe = [
     {
@@ -25,11 +25,27 @@ export const cafe = [
 
 const CafeList = () => {
     return (
-        <ScrollView>
-            {cafe.map((cafeItem, index) =>
-            (<CafeCard key={index} cafe={cafeItem} />))}
-        </ScrollView>
+      <FlatList
+        
+        data={cafe}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.cardContainer}>
+            <CafeCard cafe={item} />
+          </View>
+        )}
+        contentContainerStyle={styles.listContent}
+      />
     );
-};
-
+  };
+  
+  const styles = StyleSheet.create({
+    cardContainer: {
+      marginBottom: 15, 
+    },
+    listContent: {
+      paddingVertical: 10, 
+      paddingBottom: 200,
+    },
+  });
 export default CafeList;
