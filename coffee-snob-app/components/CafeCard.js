@@ -9,6 +9,9 @@ const CafeCard = ({ cafe }) => {
                 <Image source={cafe.image} style={styles.image} />
                 <View style={styles.info}>
                 <Text style={styles.description}>{cafe.description}</Text>
+                <Text style={styles.rating}>{cafe.rating}</Text>
+                <Text style={styles.openingHours}>{cafe.openingHours}</Text>
+                <Text style={styles.location}>{cafe.location}</Text>
             </View>
         </View>
     )
@@ -47,6 +50,21 @@ const styles= StyleSheet.create({
         fontSize: 14,
         color: 'gray',
     },
+    rating: {
+        marginTop: 5,
+        fontSize: 14,
+        color: 'gray',
+      },
+      openingHours: {
+        marginTop: 5,
+        fontSize: 14,
+        color: 'gray',
+      },
+      location: {
+        marginTop: 5,
+        fontSize: 14,
+        color: 'gray',
+      },
 });
 
 export default CafeCard;

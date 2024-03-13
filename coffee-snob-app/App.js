@@ -1,13 +1,29 @@
 
+import React from 'react';
 import { StyleSheet,  View } from 'react-native';
 import Home from './components/home';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-     <Home/>
-     
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        name="Home"
+        component={Home}
+        options={{
+          headerStyle: styles.header,
+          headerTitleStyle: styles.title,
+          headerTransparent: true,
+        }}
+
+      </Stack.Navigator>
+
+    </NavigationContainer>
+  
   );
 };
 
