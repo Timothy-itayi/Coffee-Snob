@@ -1,12 +1,13 @@
 import React from 'react';
 import CafeCard from './CafeCard';
-import { FlatList, StyleSheet, View } from 'react-native';
-import cafe from '../data/CafeData'
-
-
-const CafeList = () => {
+import { Animated , View } from 'react-native';
+import { cafe } from '../data/CafeData'
+import styles from '../AppStyles';
+ 
+const CafeList = ({ scrollY }) => {
+ 
     return (
-      <FlatList
+      <Animated.FlatList
         
         data={cafe}
         keyExtractor={(item, index) => index.toString()}
@@ -16,17 +17,14 @@ const CafeList = () => {
           </View>
         )}
         contentContainerStyle={styles.listContent}
+        onscroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY}}}],
+          { useNativeDriver: false }
+        )}
+        scrollEventThrottle={16}
       />
     );
   };
   
-  const styles = StyleSheet.create({
-    cardContainer: {
-      marginBottom: 15, 
-    },
-    listContent: {
-      paddingVertical: 10, 
-      paddingBottom: 200,
-    },
-  });
+ 
 export default CafeList;
