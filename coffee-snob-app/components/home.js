@@ -1,13 +1,13 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View,  StyleSheet } from "react-native";
 import CafeList from './cafe';
 
-export default function home (){
+export default function Home (){
 return (
     <View style={styles.container}>
 
          <View style={styles.header}>
-        <Text style={styles.title}>Coffee Snob</Text>
+      
     </View>
     <CafeList/>
 
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#A0522D',
         height: 100,
         alignItems: 'center',
-        justifyContent: 'center',
+       
         shadowColor: '#000',
         shadowOffset: {wdith: 0 , height: 2},
         shadowOpacity: 0.2,
