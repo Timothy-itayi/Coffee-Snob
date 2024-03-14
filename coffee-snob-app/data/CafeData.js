@@ -27,4 +27,3 @@ export const cafe = [
 ]
 
 
-export default cafe;
