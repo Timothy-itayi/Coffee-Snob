@@ -1,7 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    // Header styles
+
+ 
+    // Home.js
     headerContainer: {
         flex: 1,
         backgroundColor: '#fff',
