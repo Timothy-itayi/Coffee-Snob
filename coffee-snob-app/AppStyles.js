@@ -10,13 +10,15 @@ export default StyleSheet.create({
         backgroundColor: '#A0522D',
         height: 100,
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 }, // Fixed typo in 'width'
+        shadowOffset: { width: 0, height: 2 }, 
         elevation: 2,
     },
     headerTitle: { 
         color: '#FFF',
         fontSize: 40,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+       textAlign: 'center',
+       padding: 50,
     },
 
     // CafeCard.js Styles 

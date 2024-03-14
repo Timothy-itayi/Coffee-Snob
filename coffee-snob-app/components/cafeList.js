@@ -17,7 +17,7 @@ const CafeList = ({ scrollY }) => {
           </View>
         )}
         contentContainerStyle={styles.listContent}
-        onscroll={Animated.event(
+        onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { y: scrollY}}}],
           { useNativeDriver: false }
         )}

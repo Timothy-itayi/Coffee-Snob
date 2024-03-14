@@ -4,7 +4,7 @@ import React from 'react';
 import Home from './components/home';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 
 const Stack = createStackNavigator();
@@ -18,7 +18,8 @@ export default function App() {
         component={Home}
         options={{
          
-          headerTransparent: true,
+          headerTransparent: false,
+          headerShown: false,
         }}
         />
       </Stack.Navigator>
