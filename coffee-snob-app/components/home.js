@@ -15,16 +15,20 @@ export default function Home() {
       extrapolate: 'clamp',
     });
 
-    const headerOpacity = diffClamp.interpolate({
+    const textOpacity = diffClamp.interpolate({
         inputRange:[0 , 50],
         outputRange: [1, 0],
         extrapolate: 'clamp',
     });
-  
+    const headerColor = diffClamp.interpolate({
+        inputRange: [0, 50],
+        outputRange: ['black', 'transparent'], 
+        extrapolate: 'clamp',
+      })
     return (
         <>
-        <Animated.View style={[styles.header, { height: headerHeight, opacity: headerOpacity }]}>
-          <HeaderTitle style={styles.headerTitle}>Coffee Snob</HeaderTitle>
+        <Animated.View style={[styles.header, { height: headerHeight,  }]}>
+          <HeaderTitle style={styles.headerTitle} opacity={textOpacity} color={headerColor}>Coffee Snob</HeaderTitle>
         </Animated.View>
         <CafeList scrollY={scrollY} />
       </>

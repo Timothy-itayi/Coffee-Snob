@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Animated } from 'react-native';
 
-export default function HeaderTitle({ style, children }) {
-  return <Text style={style}>{children}</Text>;
+export default function HeaderTitle({ style, children, opacity, color }) {
+  return <Animated.Text style={[style, {opacity, color }]}>{children}</Animated.Text>;
 }
