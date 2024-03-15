@@ -49,6 +49,8 @@ export default StyleSheet.create({
     cardTitle: { 
         fontSize: 50,
         fontWeight: 'bold',
+        fontFamily: 'MillikRegular',
+        color: 'black',
     },
     cardDescription: { 
         marginTop: 10,
