@@ -10,17 +10,20 @@ export default StyleSheet.create({
     },
     header: {
         backgroundColor: '#A0522D',
-        height: 100,
+        height: 50,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 }, 
-        elevation: 2,
+        elevation: 10,
+        zIndex: 1,
     },
     headerTitle: { 
         color: '#FFF',
         fontSize: 40,
         fontWeight: 'bold',
        textAlign: 'center',
-       padding: 50,
+     
+       padding: 5,
+       margin: 25,
     },
 
     // CafeCard.js Styles 
@@ -41,10 +44,10 @@ export default StyleSheet.create({
         borderTopRightRadius: 10,
     },
     cardInfo: { 
-        padding: 20, 
+        padding: 1, 
     },
     cardTitle: { 
-        fontSize: 30,
+        fontSize: 50,
         fontWeight: 'bold',
     },
     cardDescription: { 
@@ -69,8 +72,14 @@ export default StyleSheet.create({
     },
 
     // CafeList styles 
+   feed: {
+    marginTop: -20,
+    zIndex: 0,
+   },
     cardContainer: {
         marginBottom: 15, 
+    
+        
     },
     listContent: {
         paddingVertical: 10, 
