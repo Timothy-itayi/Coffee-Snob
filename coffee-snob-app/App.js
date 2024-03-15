@@ -1,5 +1,6 @@
 
-import React  from 'react';
+import React , {useEffect , useState } from 'react';
+import * as Font from 'expo-font';
 
 import Home  from './components/home';
 
@@ -9,7 +10,27 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
+
+
+
 export default function App() {
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  useEffect(() => {
+    async function loadFonts() {
+      await Font.loadAsync({
+        'MillikRegular': require('./assets/fonts/Millik.otf'),
+      });
+      setFontsLoaded(true);
+    }
+
+    loadFonts();
+  }, []);
+
+  if (!fontsLoaded) {
+
+    return null;
+  }
 
   return (
    
