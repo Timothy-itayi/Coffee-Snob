@@ -12,7 +12,7 @@ const CafeList = ({ scrollY }) => {
         data={cafe}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
-          <View style={styles.cardContainer}>
+          <View >
             <CafeCard cafe={item} />
           </View>
         )}

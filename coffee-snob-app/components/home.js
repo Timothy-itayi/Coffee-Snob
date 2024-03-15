@@ -23,13 +23,13 @@ export default function Home() {
     });
     const headerColor = scrollY.interpolate({
         inputRange: [0, 50],
-        outputRange: ['black', 'transparent'], 
-        extrapolate: 'clamp',
+        outputRange: ['white', 'transparent'], 
+      
       })
     return (
         <>
-        <Animated.View style={[styles.header, { height: headerHeight,  }]}>
-          <HeaderTitle style={styles.headerTitle} opacity={textOpacity} color={headerColor}>Coffee Snob</HeaderTitle>
+        <Animated.View style={[styles.header,{ height: headerHeight}]}>
+          <HeaderTitle style={styles.headerTitle} opacity={textOpacity} color={headerColor}>Coffee Snob.</HeaderTitle>
         </Animated.View>
         <CafeList scrollY={scrollY} style={styles.feed} />
        </>
