@@ -4,48 +4,44 @@ export default StyleSheet.create({
 
  
     // Home.js
-    headerContainer: {
-        flex: 1,
-        backgroundColor: '#fff',
-    },
+   
     header: {
-        backgroundColor: '#A0522D',
-        height: 50,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 }, 
-        elevation: 10,
-        zIndex: 1,
-    },
-    headerTitle: { 
-        color: '#FFF',
-        fontSize: 40,
-        fontWeight: 'bold',
-       textAlign: 'center',
+        backgroundColor: '#100F0F',
+        marginTop: 55,
+        marginBottom: -45,
+        paddingTop: 50,
      
-       padding: 5,
-       margin: 25,
+        
+        
+        
+    },
+
+    headerTitle: { 
+        color: '#FFFDFC',
+        fontSize: 30,
+        fontWeight: '100',
+       textAlign: 'left',
+       fontFamily: 'MillikRegular',
+       lineHeight: 80,
+       margin: -70,
+       marginBottom: 20,
+       paddingHorizontal: 90,
+       letterSpacing: -1,
+  
     },
 
     // CafeCard.js Styles 
     card: {
         backgroundColor: '#fff',
-        borderRadius: 10,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2, 
-        elevation: 5,
-        marginBottom: 15,
+      
+      
     },
     cardImage: { 
         width: '100%',
         height: 200,
-        borderTopLeftRadius: 10,
-        borderTopRightRadius: 10,
+   
     },
-    cardInfo: { 
-        padding: 1, 
-    },
+  
     cardTitle: { 
         fontSize: 50,
         fontWeight: 'bold',
@@ -56,6 +52,7 @@ export default StyleSheet.create({
         marginTop: 10,
         fontSize: 14,
         color: 'gray',
+        fontFamily: 'MillikRegular',
     },
     cardRating: { 
         marginTop: 5,
@@ -66,25 +63,20 @@ export default StyleSheet.create({
         marginTop: 5,
         fontSize: 14,
         color: 'gray',
+        fontFamily: 'MillikRegular',
     },
     cardLocation: { 
         marginTop: 5,
         fontSize: 14,
         color: 'gray',
+        fontFamily: 'MillikRegular',
     },
 
     // CafeList styles 
-   feed: {
-    marginTop: -20,
-    zIndex: 0,
-   },
-    cardContainer: {
-        marginBottom: 15, 
-    
-        
-    },
+ 
+ 
     listContent: {
-        paddingVertical: 10, 
+    
         paddingBottom: 200,
     },
 });

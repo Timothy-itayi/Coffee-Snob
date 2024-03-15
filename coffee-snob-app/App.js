@@ -1,7 +1,7 @@
 
 import React , {useEffect , useState } from 'react';
 import * as Font from 'expo-font';
-
+import { StatusBar } from 'expo-status-bar'
 import Home  from './components/home';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -14,6 +14,7 @@ const Stack = createStackNavigator();
 
 
 export default function App() {
+
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
@@ -33,9 +34,10 @@ export default function App() {
   }
 
   return (
-   
+   <>
+   <StatusBar style="light" backgroundColor='white'/>
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ cardStyle: {backgroundColor: '#A0522D'}}} >
+      <Stack.Navigator screenOptions={{ cardStyle: {backgroundColor: '#100F0F',}}} >
         <Stack.Screen
         name="Coffee Snob"
         component={Home}
@@ -48,7 +50,7 @@ export default function App() {
         />
       </Stack.Navigator>
     </NavigationContainer>
-
+</>
   );
 }
 
