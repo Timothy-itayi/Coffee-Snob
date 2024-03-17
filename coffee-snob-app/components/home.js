@@ -11,13 +11,13 @@ export default function Home() {
   
     const headerHeight = scrollY.interpolate({
       inputRange: [0, 100],
-      outputRange: [100, 0],
+      outputRange: [100, 50],
       extrapolate: 'clamp',
     });
 
     const textOpacity = diffClamp.interpolate({
-        inputRange:[0 , 50],
-        outputRange: [1, 0],
+        inputRange:[0 , 50, 400 ],
+        outputRange: [1, 1, 0],
        
         easing: Easing.inOut(Easing.ease),
     });
