@@ -23,7 +23,32 @@ export const cafe = [
         rating: 4, 
         openingHours: '8:00 AM - 6:00 PM', 
         location: '123 Plant Street, City', 
-    }
+    },
+    {
+        image: require('../assets/modern.jpeg'),
+        name: 'Metro Cafe',
+        description: 'Sophisticated sanctuary known for its elegant white marble aesthetic.',
+        rating: 4, 
+        openingHours: '8:00 AM - 6:00 PM', 
+        location: '123 Plant Street, City', 
+    },
+    {
+        image: require('../assets/old.jpeg'),
+        name: 'Fusion Cafe',
+        description: 'Sophisticated sanctuary known for its elegant white marble aesthetic.',
+        rating: 4, 
+        openingHours: '8:00 AM - 6:00 PM', 
+        location: '123 Plant Street, City', 
+    },
+    {
+        image: require('../assets/hip.jpeg'),
+        name: 'Archie,s Cafe',
+        description: 'Sophisticated sanctuary known for its elegant white marble aesthetic.',
+        rating: 4, 
+        openingHours: '8:00 AM - 6:00 PM', 
+        location: '123 Plant Street, City', 
+    },
+
 ]
 
 
