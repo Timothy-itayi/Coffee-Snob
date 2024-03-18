@@ -4,7 +4,7 @@ import { Animated , View } from 'react-native';
 import { cafe } from '../data/CafeData'
 import styles from '../AppStyles';
  
-const CafeList = ({ scrollY }) => {
+const CafeList = ({ onScroll }) => {
  
     return (
       <Animated.FlatList
@@ -17,10 +17,8 @@ const CafeList = ({ scrollY }) => {
           </View>
         )}
         contentContainerStyle={styles.listContent}
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { y: scrollY}}}],
-          { useNativeDriver: false }
-        )}
+        onScroll={onScroll}
+        
         scrollEventThrottle={16}
       />
     );
