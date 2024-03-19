@@ -2,18 +2,32 @@
   "name": "coffee-snob",
   "version": "1.0.0",
   "description": "A project for coffee enthusiasts.",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "expo": "expo start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "expo": "^50.0.11",
+    "@react-native-community/masked-view":"^0.1.11",
+    "@react-navigation/native": "^6.1.16",
+    "@react-navigation/stack": "^6.3.28",
+    "expo-font": "~11.10.3",
+    "expo-status-bar": "~1.11.1",
+    "react-native-reanimated": "~3.6.2",
+    "react-native-screens": "^3.29.0",
+    "react-native-maps": "1.10.0",
+    "expo": "^50.0.13",
     "metro-cache": "^0.80.6",
-    "react-native": "^0.73.6"
+    "react": "18.2.0",
+    "react-native": "^0.73.5"
   },
   "devDependencies": {
-    "metro": "^0.80.6"
+    "metro": "^0.80.6",
+    "@types/react": "^18.2.67"
   }
+
 }
