@@ -1,14 +1,14 @@
 import React from 'react';
-import { FlatList, View} from 'react-native';
+import { Animated, View} from 'react-native';
 
 import CafeCard from './CafeCard';
 import { cafe } from '../data/CafeData'
 import styles from '../AppStyles';
 
-const CafeList = ({ onScroll }) => {
+const CafeList = ({onScroll}) => {
   return (
    
-      <FlatList
+      <Animated.FlatList
         data={cafe}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item }) => (
@@ -18,6 +18,7 @@ const CafeList = ({ onScroll }) => {
         )}
         contentContainerStyle={styles.listContent}
         onScroll={onScroll}
+        
         scrollEventThrottle={16}
       />
     
@@ -25,3 +26,4 @@ const CafeList = ({ onScroll }) => {
 }
 
 export default CafeList;
+
