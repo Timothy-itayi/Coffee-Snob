@@ -22,7 +22,8 @@ export default function App() {
     async function loadFonts() {
      try {
       await Font.loadAsync({
-        'MillikRegular': require('./assets/fonts/Millik.otf'),
+        'Sling': require('./assets/fonts/Sling.ttf'),
+        'SlingBold': require('./assets/fonts/SlingBold.ttf'),
       });
       setFontsLoaded(true);
      } catch (error) {
@@ -53,7 +54,6 @@ export default function App() {
         name="Coffee Snob"
         component={Home}
         options={{
-         
           headerTransparent: false,
           headerShown: false,
           

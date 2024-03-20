@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "coffee-snob",
+    "slug": "coffee-snob",
+    "version": "1.0.0",
+    "description": "A project for coffee enthusiasts.",
+    "sdkVersion": "50.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.anonymous.coffee-snob"
+    }
+  }
+}
