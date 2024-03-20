@@ -21,10 +21,10 @@ export default StyleSheet.create({
         fontSize: 30,
         fontWeight: '100',
        textAlign: 'left',
-       fontFamily: 'MillikRegular',
+       fontFamily: 'SlingBold',
        lineHeight: 80,
        margin: -70,
-       marginBottom: 20,
+       marginBottom: -10,
        paddingHorizontal: 90,
        letterSpacing: -1,
   
@@ -33,7 +33,7 @@ export default StyleSheet.create({
     // CafeCard.js Styles 
     card: {
         backgroundColor: '#fff',
-      
+       
       
     },
     cardImage: { 
@@ -45,14 +45,14 @@ export default StyleSheet.create({
     cardTitle: { 
         fontSize: 50,
         fontWeight: 'bold',
-        fontFamily: 'MillikRegular',
+        fontFamily: 'Sling',
         color: 'black',
     },
     cardDescription: { 
         marginTop: 10,
         fontSize: 14,
         color: 'gray',
-        fontFamily: 'MillikRegular',
+        fontFamily: 'Sling',
     },
     cardRating: { 
         marginTop: 5,
@@ -63,13 +63,13 @@ export default StyleSheet.create({
         marginTop: 5,
         fontSize: 14,
         color: 'gray',
-        fontFamily: 'MillikRegular',
+        fontFamily: 'Sling',
     },
     cardLocation: { 
         marginTop: 5,
         fontSize: 14,
         color: 'gray',
-        fontFamily: 'MillikRegular',
+        fontFamily: 'Sling',
     },
 
     // CafeList styles 
