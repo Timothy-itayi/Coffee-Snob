@@ -53,7 +53,6 @@ export default function App() {
         name="Coffee Snob"
         component={Home}
         options={{
-         
           headerTransparent: false,
           headerShown: false,
           

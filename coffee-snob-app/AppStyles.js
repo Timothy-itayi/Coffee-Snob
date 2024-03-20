@@ -17,7 +17,7 @@ export default StyleSheet.create({
     },
 
     headerTitle: { 
-        color: '#FFFDFC',
+        color: '#FFFF',
         fontSize: 30,
         fontWeight: '100',
        textAlign: 'left',
