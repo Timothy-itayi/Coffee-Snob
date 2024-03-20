@@ -5,7 +5,7 @@ import CafeCard from './CafeCard';
 import { cafe } from '../data/CafeData'
 import styles from '../AppStyles';
 
-const CafeList = ({onScroll}) => {
+const CafeList = () => {
   return (
    
       <Animated.FlatList
@@ -17,9 +17,7 @@ const CafeList = ({onScroll}) => {
           </View>
         )}
         contentContainerStyle={styles.listContent}
-        onScroll={onScroll}
         
-        scrollEventThrottle={16}
       />
     
   );
