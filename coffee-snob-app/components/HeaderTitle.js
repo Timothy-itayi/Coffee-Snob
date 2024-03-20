@@ -1,6 +1,13 @@
 import React from 'react';
-import { Animated } from 'react-native';
+import { Text , View} from 'react-native';
+import styles from '../AppStyles'
 
-export default function HeaderTitle({ style, children, opacity, color }) {
-  return <Animated.Text style={[style, {opacity: opacity, color: color }]}>{children}</Animated.Text>;
+
+const HeaderTitle = ({  children }) => {
+  return (
+
+  <Text style={styles.headerTitle}>{children} </Text>
+  );
 }
+
+export default HeaderTitle;

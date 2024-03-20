@@ -1,140 +1,117 @@
-import React, { useRef , useState} from 'react';
-import { Easing , Dimensions } from "react-native";
-import {Animated as Reanimated }from 'react-native-reanimated';
-import CafeList from './cafeList';
-import styles from '../AppStyles'
-import HeaderTitle from './HeaderTitle';
+// import React, { useRef , useState} from 'react';
+// import { Easing, Dimensions  } from "react-native";
+// import {useSharedValue, useAnimatedStyle, withTiming, View as AnimatedView }from 'react-native-reanimated';
+// import CafeList from './cafeList';
+// import styles from '../AppStyles'
+// import HeaderTitle from './HeaderTitle';
 
-const screenHeight = Dimensions.get('window').height;
+// const screenHeight = Dimensions.get('window').height;
 
-export default function Home() {
-    const scrollY = useRef(new Reanimated.Value(0)).current;
-    const diffClamp = Reanimated.diffClamp(scrollY, 0 , 100);
-    const [prevScrollY , setPrevScrollY]= useState(0);
-    const [ headerVisible, setHeaderVisible] = useState(0);
+// const Home = () => {
+//     const scrollY = useRef(useSharedValue(0)).current;
+//     const [prevScrollY , setPrevScrollY]= useState(0);
+//     const [ headerVisible, setHeaderVisible] = useState(true);
     
-    const animatedValues = {
-         headerHeight : scrollY.interpolate({
-            inputRange: [0, screenHeight * .5 , screenHeight ],
-            outputRange: [90,  headerVisible ? 50:0, 0],
-            extrapolate: 'clamp',
-      }),
-   
-        translate : scrollY.interpolate({
-            inputRange: [0, screenHeight * 0.5 , screenHeight ],
-            outputRange: [0, 1, -1],
-            extrapolate: 'clamp',
-      }),
-        textOpacity : diffClamp.interpolate({
-            inputRange:[0 , 50, 400 ],
-            outputRange: [1, 1, 0],
-            
-            easing: Easing.inOut(Easing.ease),
-      }),
-        headerColor : scrollY.interpolate({
-            inputRange: [0, 200],
-            outputRange: ['white', 'transparent'], 
-            
-        }),
-};
+//     const animatedValues = {
+//         headerHeight: useAnimatedStyle(() => {
+//             return {
+//                 height: withTiming(headerVisible ? 90 : 0, { duration: 500, easing: Easing.linear }),
+//             };
+//         }),
+
+//         translate: useAnimatedStyle(() => {
+//             const translateY = withTiming(headerVisible ? 0 : 1, { duration: 500, easing: Easing.linear });
+//             return {
+//               transform: [{ translateY: translateY }],
+//             };
+//           }),
+          
+
+//         textOpacity: useAnimatedStyle(() => {
+//             return {
+//                 opacity: withTiming(headerVisible ? 1 : 0, { duration: 500, easing: Easing.linear }),
+//             };
+//         }),
+
+//         headerColor: useAnimatedStyle(() => {
+//             return {
+//                 backgroundColor: withTiming(headerVisible ? 'white' : 'transparent', { duration: 500, easing: Easing.linear }),
+//             };
+//         }),
+//     };
  
    
-    const animationDuration = 5000; 
-
-      const hideHeader = () => {
-        Reanimated.timing(animatedValues.headerHeight,{
-            toValue: 0,
-            duration: animationDuration,
-            easing: Easing.linear,
-            useNativeDriver: false,
-        }).start(() => setHeaderVisible(false)),
-
-        Reanimated.timing(animatedValues.translate,{
-            toValue: 0,
-            duration: animationDuration,
-            easing: Easing.linear,
-            useNativeDriver: false,
-        }).start(),
-
-        Reanimated.timing(animatedValues.textOpacity,{
-            toValue: 0,
-            duration: animationDuration,
-            easing: Easing.linear,
-            useNativeDriver: false,
-        }).start(),
-
-        Reanimated.timing(animatedValues.headerColor,{
-            toValue: 0,
-            duration: animationDuration,
-            easing: Easing.linear,
-            useNativeDriver: false,
-        }).start();
-
-       };
-    
-       const showHeader = () => {
-        setHeaderVisible(true);
-        Reanimated.timing(animatedValues.headerHeight,{
-            toValue: 1,
-            duration: animationDuration,
-            easing: Easing.linear,
-            useNativeDriver: false,
-        }).start(),
-
-        
-        Reanimated.timing(animatedValues.translate,{
-            toValue: 1,
-            duration: animationDuration,
-            easing: Easing.linear,
-            useNativeDriver: false,
-        }).start(),
-
-        
-        Reanimated.timing(animatedValues.textOpacity,{
-            toValue: 1,
-            duration: animationDuration,
-            easing: Easing.linear,
-            useNativeDriver: false,
-        }).start(),
-
-        
-        Reanimated.timing(animatedValues.headerColor,{
-            toValue: 1,
-            duration: animationDuration,
-            easing: Easing.linear,
-            useNativeDriver: false,
-        }).start();
-       };
     
 
-    const handleScroll = (event) => {
-    const offsetY = event.nativeEvent.contentOffset.y;
-    const scrollVelocity = offsetY - prevScrollY;
-    if( scrollVelocity > 5 & offsetY > 5) {
-        
-        
-        hideHeader();
-    } else if (scrollVelocity < 0){
-     ;
-        
-        showHeader();
-    }
-    setPrevScrollY(offsetY)
-   };
+//     const handleScroll = (event) => {
+//     const offsetY = event.nativeEvent.contentOffset.y;
+//     const scrollVelocity = offsetY - prevScrollY;
+//     if( scrollVelocity > 5 & offsetY > 5){
+//         setHeaderVisible(false);
+//     } else if (scrollVelocity < 0) {
+//         setHeaderVisible(true);
+//     }
+//     setPrevScrollY(offsetY);
+//     scrollY.value = offsetY;
+// }; 
 
+//    // Log imports
+//    console.log('Imported CafeList:', CafeList);
+//    console.log('Imported HeaderTitle:', HeaderTitle);
   
-    return (
-        <>
-        {headerVisible ?(
+//     return (
+//         <>
+//         {headerVisible ?(
             
        
-        <Reanimated.View style={[styles.header, { height: animatedValues.headerHeight ,  transform: [{ translateY: animatedValues.translate }]  }]}>
-          <HeaderTitle style={styles.headerTitle } opacity={animatedValues.textOpacity} color={animatedValues.headerColor}>
-           Coffee Snob.
-            </HeaderTitle>
-        </Reanimated.View>
-        ) : null}
-        <CafeList onScroll={handleScroll} style={styles.feed} />
-       </>
-    );
-    }
+//         <AnimatedView style={[styles.header, { height: animatedValues.headerHeight ,  transform: [{ translateY: animatedValues.translate }]  }]}>
+//           <HeaderTitle style={styles.headerTitle } opacity={animatedValues.textOpacity} color={animatedValues.headerColor}>
+//            Coffee Snob.
+//             </HeaderTitle>
+//         </AnimatedView>
+//         ) : null}
+//         <CafeList onScroll={handleScroll} style={styles.feed} />
+//        </>
+//     );
+// }
+
+// export default Home;
+import React, { useRef, useState } from 'react';
+import { View } from 'react-native';
+import CafeList from './cafeList';
+import HeaderTitle from './HeaderTitle';
+import styles from '../AppStyles';
+
+const Home = () => {
+
+
+    const [headerVisible, setHeaderVisible] = useState(true);
+    const prevScrollY = useRef(0);
+  
+    const handleScroll = (event) => {
+      const offsetY = event.nativeEvent.contentOffset.y;
+      const scrollVelocity = offsetY - prevScrollY.current;
+      if (scrollVelocity > 5 && offsetY > 5) {
+        setHeaderVisible(false);
+      } else if (scrollVelocity < 0) {
+        setHeaderVisible(true);
+      }
+      prevScrollY.current = offsetY;
+    };
+
+
+
+  return (
+    
+        <View style={styles.header}>
+          <HeaderTitle style={styles.headerTitle}>Coffee Snob.</HeaderTitle>
+          <CafeList onScroll={handleScroll} style={styles.feed} />
+        </View>
+        
+      
+    
+   
+  );
+}
+
+export default Home;
