@@ -8,7 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { registerRootComponent } from 'expo';
 import styles from './AppStyles'
-
+import { FilterProvider} from './components/filterContext';
 const Stack = createStackNavigator();
 
 
@@ -50,22 +50,24 @@ export default function App() {
   }
 
   return (
-   <>
+   <FilterProvider>
    <StatusBar style={styles.StatusBar}/>
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ cardStyle: {backgroundColor: '#FFFDFC',}}} >
         <Stack.Screen
         name="Coffee Snob"
         component={Home}
+        
         options={{
           headerTransparent: false,
           headerShown: false,
           
         }}
+       
         />
       </Stack.Navigator>
     </NavigationContainer>
-</>
+</FilterProvider>
   );
 }
 
