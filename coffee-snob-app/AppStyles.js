@@ -34,12 +34,13 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginVertical: 10,
+        marginHorizontal: 80,
     },
 
 cafeFilterButton: {
     padding: 10 ,
     borderWidth: 1, 
-    borderRadius: 5, 
+    borderRadius: 20, 
 },
 activeCafeFilterButton: {
     backgroundColor: '#315F72',
@@ -59,11 +60,12 @@ activeCafeFilterButton: {
     cardTitle: { 
         fontSize: 50,
        
-        fontFamily: 'Inter-SemiBold',
+        fontFamily: 'SlingBold',
         color: 'black',
         marginLeft: 16,
         marginTop: 20,
         marginBottom: 0,
+        marginRight: 16,
     },
     cardDescription: { 
         marginTop: 10,
@@ -72,6 +74,7 @@ activeCafeFilterButton: {
         color: '#171414',
         fontFamily: 'Inter-SemiBold',
         marginLeft: 16,
+        marginRight: 16,
        
         
     },

@@ -4,10 +4,11 @@ import CafeList from './cafeList';
 import HeaderTitle from './HeaderTitle';
 import styles from '../AppStyles';
 import CafeFilter from './cafeFilter';
+import {CafeData} from '../data/CafeData';
 
 
 const Home = () => { 
-    const [activeFilter , setActiveFilter] = useState();
+    const [activeFilter , setActiveFilter] = useState(null);
 
     const handleFilterChange = (filter) => {
         setActiveFilter(filter);
@@ -32,7 +33,7 @@ const Home = () => {
       </Animated.View>
 
       <CafeList
-       
+       cafes={CafeData}activeFilter={activeFilter}
         style={styles.feed}
       />
     </>
