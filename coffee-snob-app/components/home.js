@@ -1,21 +1,18 @@
-import React, { useRef } from 'react';
-import { Dimensions, Animated, Text } from 'react-native';
+import {  React ,useState } from 'react';
+import { Animated, Text } from 'react-native';
 import CafeList from './cafeList';
 import HeaderTitle from './HeaderTitle';
 import styles from '../AppStyles';
-
-const screenHeight = Dimensions.get('window').height;
-
-const Home = () => {
+import CafeFilter from './cafeFilter';
 
 
- 
+const Home = () => { 
+    const [activeFilter , setActiveFilter] = useState();
 
- 
-
- 
-
-
+    const handleFilterChange = (filter) => {
+        setActiveFilter(filter);
+    };
+    
   return (
     <>
       <Animated.View
@@ -26,15 +23,12 @@ const Home = () => {
       >
         <HeaderTitle
           style={[
-            styles.headerTitle,
-            {
-             
-              
-            }
+            styles.headerTitle,    
           ]}
         >
           <Text>Coffee Snob.</Text>
         </HeaderTitle>
+        <CafeFilter activeFilter={activeFilter} onChangeFilter={handleFilterChange} />
       </Animated.View>
 
       <CafeList
