@@ -2,19 +2,21 @@ import React , {useMemo} from 'react';
 import { Animated, View} from 'react-native';
 
 import CafeCard from './CafeCard';
-import { cafes } from '../data/CafeData'
+
 import styles from '../AppStyles';
 
-const CafeList = ({ activeFilter}) => {
+const CafeList = ({ cafes, activeFilter, handleScroll }) => {
 
   const filterCafes = useMemo(() => {
     if (activeFilter === 'rating') {
       return cafes.sort((a, b) => b.rating - a.rating);
     } else if (activeFilter === 'location') {
       return cafes.sort((a, b) => a.location.localeCompare(b.location))
-    } 
+    } else if ( activeFilter === 'Open') {
+      return cafes.filter(cafe => cafe.openingHours === 'Open')
+    }
     return cafes.slice();
-  }, [activeFilter]);
+  }, [cafes, activeFilter]);
 
   return (
    
@@ -27,7 +29,8 @@ const CafeList = ({ activeFilter}) => {
           </View>
         )}
         contentContainerStyle={styles.listContent}
-        
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
       />
     
   );

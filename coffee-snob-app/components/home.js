@@ -1,19 +1,19 @@
-import {  React ,useState } from 'react';
+import {  React } from 'react';
 import { Animated, Text } from 'react-native';
 import CafeList from './cafeList';
 import HeaderTitle from './HeaderTitle';
 import styles from '../AppStyles';
 import CafeFilter from './cafeFilter';
-import {CafeData} from '../data/CafeData';
-
+import {cafes} from '../data/CafeData';
+import { useFilter } from './filterContext';
 
 const Home = () => { 
-    const [activeFilter , setActiveFilter] = useState(null);
-
-    const handleFilterChange = (filter) => {
-        setActiveFilter(filter);
-    };
-    
+ 
+  const { activeFilter , setActiveFilter } = useFilter();
+  
+  const handleFilterChange = (filter) => {
+    setActiveFilter(filter);
+  };
   return (
     <>
       <Animated.View
@@ -33,7 +33,7 @@ const Home = () => {
       </Animated.View>
 
       <CafeList
-       cafes={CafeData}activeFilter={activeFilter}
+       cafes={cafes}activeFilter={activeFilter}
         style={styles.feed}
       />
     </>

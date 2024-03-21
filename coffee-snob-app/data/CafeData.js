@@ -6,8 +6,8 @@ export const cafes = [
         description: 'Rated for their food ',
         rating: 4.3, 
         totalReviews: '(521)',
-        openingHours: 'Open',
-        closes: 'Closes 3pm',
+        openingHours: 'Closed',
+        closes: 'Open 8am',
         location: '10 Victoria Street, Hamilton, 3204, New Zealand', 
 
     },
@@ -40,8 +40,8 @@ export const cafes = [
         description: 'Rated for their staff',
         rating: 3.9, 
         totalReviews: '(921)',
-        openingHours: 'Open', 
-        closes: 'Closes 3pm', 
+        openingHours: 'Closed', 
+        closes: 'Open 7am', 
         location: '1456 Pine Street, Portland, OR 97201, USA', 
     },
     {
