@@ -30,7 +30,7 @@ export default StyleSheet.create({
   
     },
 
-    // CafeCard.js Styles 
+    ///// CafeCard.js Styles////// 
     card: {
         backgroundColor: '#fff',
        
@@ -55,15 +55,13 @@ export default StyleSheet.create({
         fontFamily: 'Sling',
     },
     cardRating: { 
-        marginTop: 5,
+      
         fontSize: 14,
-        color: 'gray',
-    },
-    cardOpeningHours: { 
-        marginTop: 5,
-        fontSize: 14,
-        color: 'gray',
-        fontFamily: 'Sling',
+        color: 'grey',
+        flexDirection: 'row',
+       
+        alignItems: 'center',
+        marginTop: 0
     },
     cardLocation: { 
         marginTop: 5,
@@ -71,6 +69,48 @@ export default StyleSheet.create({
         color: 'gray',
         fontFamily: 'Sling',
     },
+ ///// CafeCard.js Styles////////// 
+    
+ ////////////Opening/ Closing styles ////////
+    hoursContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 0,
+    },
+    cardOpeningHours: { 
+        marginTop: 0,
+        fontSize: 14,
+        color: 'green',
+        fontFamily: 'SlingBold',
+    },
+   
+    space: {
+        marginHorizontal: 5,
+    },
+
+    cardCloses: { 
+        marginTop: 0,
+        fontSize: 14,
+        color: 'gray',
+        fontFamily: 'Sling',
+    },
+
+   /// // Rating / Stars styles ////
+    ratingContainer: {
+        flexDirection: 'row',
+       
+        alignItems: 'center',
+        marginTop: 0,
+   
+    },
+    starStyle: {
+        flexDirection: 'row',
+       
+        alignItems: 'center',
+        marginTop: 0,
+    },
+ //   /// // Rating / Stars styles ////
+  
 
     // CafeList styles 
  
