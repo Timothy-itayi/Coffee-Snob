@@ -30,7 +30,20 @@ export default StyleSheet.create({
        letterSpacing: -1,
   
     },
+    cafeFilterContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginVertical: 10,
+    },
 
+cafeFilterButton: {
+    padding: 10 ,
+    borderWidth: 1, 
+    borderRadius: 5, 
+},
+activeCafeFilterButton: {
+    backgroundColor: '#315F72',
+},
     ///// CafeCard.js Styles////// 
     card: {
         backgroundColor: '#fff',

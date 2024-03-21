@@ -1,5 +1,6 @@
-export const cafe = [
+export const cafes = [
     {
+        id: 1,
         image: require('../assets/botanic.jpeg'),
         name: 'Botanic Brews',
         description: 'Rated for their food ',
@@ -11,6 +12,7 @@ export const cafe = [
 
     },
     {
+        id: 2,
         image: require('../assets/rustic.avif'),
         name: 'Barnwood Bistro',
         description: 'Rated for their atmosphere',
@@ -21,6 +23,7 @@ export const cafe = [
         location: '321 Cedar Road, Sydney, NSW 2000, Australia', 
     },
     {
+        id: 3,
         image: require('../assets/white.jpeg'),
         name: 'Marble Cafe',
         description: 'Rated white marble aesthetic.',
@@ -31,6 +34,7 @@ export const cafe = [
         location: '987 Birch Lane, Manchester M14 6FQ, United Kingdom', 
     },
     {
+        id: 4,
         image: require('../assets/modern.jpeg'),
         name: 'Metro Cafe',
         description: 'Rated for their staff',
@@ -41,6 +45,7 @@ export const cafe = [
         location: '1456 Pine Street, Portland, OR 97201, USA', 
     },
     {
+        id: 5,
         image: require('../assets/old.jpeg'),
         name: 'Fusion Cafe',
         description: 'Rated for their baked goods and espresso',
@@ -51,6 +56,7 @@ export const cafe = [
         location: '123 Elm Street, Springfield, IL 62701, USA', 
     },
     {
+        id: 6,
         image: require('../assets/hip.jpeg'),
         name: 'Archie,s Cafe',
         description: 'Rated for their vibe',
