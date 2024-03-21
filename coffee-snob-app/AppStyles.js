@@ -13,7 +13,7 @@ export default StyleSheet.create({
     header: {
         backgroundColor: '#FFFDFC',
         marginTop: 55,
-        marginBottom: -45,
+        marginBottom: 5,
         paddingTop: 50,
     },
 
@@ -45,8 +45,8 @@ export default StyleSheet.create({
   
     cardTitle: { 
         fontSize: 50,
-        fontWeight: 'bold',
-        fontFamily: 'Sling',
+       
+        fontFamily: 'Inter-SemiBold',
         color: 'black',
         marginLeft: 16,
         marginTop: 20,
