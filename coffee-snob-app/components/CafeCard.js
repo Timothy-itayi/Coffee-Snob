@@ -4,6 +4,7 @@ import styles from '../AppStyles';
 import { AirbnbRating } from 'react-native-ratings';
 
 
+
 const CafeCard = ({ cafe }) => {
     return (
         <View style={styles.card}>
@@ -13,23 +14,28 @@ const CafeCard = ({ cafe }) => {
                 <Text style={styles.cardDescription}>{cafe.description}</Text>
                 <View style={styles.ratingContainer}>
 
-                <Text>{cafe.rating}</Text>
+                <Text style={styles.cafeCardRating}>{cafe.rating}</Text>
              
                 <AirbnbRating 
-                count={5.0}
+                type='custom'
+                selectedColor= '#315F72'
+                count={5}
                 defaultRating={cafe.rating}
-               
-                ratingContainerStyle={styles.cardRating}
-              
+            
                 starContainerStyle={styles.starStyle}
+               
+                
                 size={15}
-                 fractions={2}
-                isDisabled={false}
-                showRating={false}/>
+               
+                isDisabled={true}
+                showRating={false}
+
+               />
+               <Text style={styles.cardReviews}>{cafe.totalReviews}</Text>
                    </View>
                 <Text style={styles.cardLocation}>{cafe.location}</Text>
                 <View style={styles.hoursContainer}>
-                <Text style={[styles.cardOpeningHours, { color: cafe.openingHours === 'Open' ? 'green' : 'red'}]}>{cafe.openingHours}</Text>
+                <Text style={[styles.cardOpeningHours, { color: cafe.openingHours === 'Open' ? '#637B00' : '#AD000A'}]}>{cafe.openingHours}</Text>
                 <Text style={styles.space}></Text>
                 <Text style={styles.cardCloses}>{cafe.closes}</Text>
                 </View>

@@ -1,23 +1,24 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+////////  APP.js //////
 
+    statusBar: {
+        style: 'dark', // Default style
+        backgroundColor: '#000', // Default background color
+    },
  
-    // Home.js
+    ////// Home.js//////
    
     header: {
-        backgroundColor: '#100F0F',
+        backgroundColor: '#FFFDFC',
         marginTop: 55,
         marginBottom: -45,
         paddingTop: 50,
-     
-        
-        
-        
     },
 
     headerTitle: { 
-        color: '#FFFF',
+        color: 'black',
         fontSize: 30,
         fontWeight: '100',
        textAlign: 'left',
@@ -33,12 +34,12 @@ export default StyleSheet.create({
     ///// CafeCard.js Styles////// 
     card: {
         backgroundColor: '#fff',
-       
+       marginBottom: 20,
       
     },
     cardImage: { 
         width: '100%',
-        height: 200,
+        height: 361,
    
     },
   
@@ -47,27 +48,46 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         fontFamily: 'Sling',
         color: 'black',
+        marginLeft: 16,
+        marginTop: 20,
+        marginBottom: 0,
     },
     cardDescription: { 
         marginTop: 10,
-        fontSize: 14,
-        color: 'gray',
-        fontFamily: 'Sling',
+        marginBottom: 6,
+        fontSize: 18,
+        color: '#171414',
+        fontFamily: 'Inter-SemiBold',
+        marginLeft: 16,
+       
+        
+    },
+    cafeCardRating: {
+        color: '#A6A2A0',
+        marginTop: 2,
+        fontSize: 16,
+    },
+    cardReviews: {
+      color: '#A6A2A0',
+      fontSize: 16,
     },
     cardRating: { 
       
-        fontSize: 14,
-        color: 'grey',
+        fontSize: 16,
+        color: '#A6A2A0',
         flexDirection: 'row',
-       
+        marginLeft: 16,
         alignItems: 'center',
         marginTop: 0
     },
     cardLocation: { 
         marginTop: 5,
-        fontSize: 14,
-        color: 'gray',
-        fontFamily: 'Sling',
+        fontSize: 16,
+        color: '#A6A2A0',
+        fontFamily: 'Inter-Regular',
+        marginLeft: 16,
+        width:'60%',
+        flexWrap: 'wrap'
     },
  ///// CafeCard.js Styles////////// 
     
@@ -75,13 +95,15 @@ export default StyleSheet.create({
     hoursContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 0,
+        marginTop: 5,
+        marginLeft: 16,
     },
     cardOpeningHours: { 
         marginTop: 0,
-        fontSize: 14,
-        color: 'green',
-        fontFamily: 'SlingBold',
+        fontSize: 16,
+    
+        fontFamily: 'Inter-SemiBold',
+       
     },
    
     space: {
@@ -90,24 +112,27 @@ export default StyleSheet.create({
 
     cardCloses: { 
         marginTop: 0,
-        fontSize: 14,
-        color: 'gray',
-        fontFamily: 'Sling',
+        fontSize: 16,
+        color: '#A6A2A0',
+        fontFamily: 'Inter-Regular',
+        
     },
 
    /// // Rating / Stars styles ////
     ratingContainer: {
         flexDirection: 'row',
-       
+        marginLeft: 16,
         alignItems: 'center',
         marginTop: 0,
-   
+       
     },
     starStyle: {
         flexDirection: 'row',
-       
+        marginLeft: 5,
         alignItems: 'center',
         marginTop: 0,
+        
+   
     },
  //   /// // Rating / Stars styles ////
   
