@@ -5,7 +5,7 @@ import CafeCard from './CafeCard';
 
 import styles from '../AppStyles';
 
-const CafeList = ({ cafes, activeFilter, handleScroll }) => {
+const CafeList = ({ cafes, activeFilter}) => {
 
   const filterCafes = useMemo(() => {
     if (activeFilter === 'rating') {
@@ -29,8 +29,8 @@ const CafeList = ({ cafes, activeFilter, handleScroll }) => {
           </View>
         )}
         contentContainerStyle={styles.listContent}
-        onScroll={handleScroll}
-        scrollEventThrottle={16}
+     
+        contentLength={CafeList}
       />
     
   );

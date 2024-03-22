@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import { View , Text , Image } from 'react-native';
 import styles from '../AppStyles';
 import { AirbnbRating } from 'react-native-ratings';
@@ -7,7 +7,7 @@ import { AirbnbRating } from 'react-native-ratings';
 
 const CafeCard = ({ cafe }) => {
     return (
-        <View style={styles.card}>
+        <View style={styles.cardContainer}>
              
                 <Image source={cafe.image} style={styles.cardImage} />
                 <Text style={styles.cardTitle}>{cafe.name}</Text>   
@@ -46,4 +46,4 @@ const CafeCard = ({ cafe }) => {
 
 
 
-export default CafeCard;
+export default memo(CafeCard);

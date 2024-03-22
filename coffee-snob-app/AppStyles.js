@@ -10,31 +10,41 @@ export default StyleSheet.create({
  
     ////// Home.js//////
    
-    header: {
-        backgroundColor: '#FFFDFC',
-        marginTop: 55,
-        marginBottom: 5,
-        paddingTop: 50,
+    headerContainer: {
+        backgroundColor: 'blue',
+        marginVertical: 0,
+        marginTop: 40,
+        paddingBottom: -40,
+        paddingTop: 16,
+        marginHorizontal: 16,
+        
     },
 
-    headerTitle: { 
+    headerText: {
         color: 'black',
         fontSize: 30,
         fontWeight: '100',
        textAlign: 'left',
        fontFamily: 'SlingBold',
+       letterSpacing: -1,
+    },
+    headerTitle: { 
+     
        lineHeight: 80,
        margin: -70,
-       marginBottom: -10,
+       marginBottom: 10,
        paddingHorizontal: 90,
        letterSpacing: -1,
-  
+     
+       
+    
     },
     cafeFilterContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginVertical: 10,
-        marginHorizontal: 80,
+        marginHorizontal: 40,
+       
     },
 
 cafeFilterButton: {
@@ -46,10 +56,12 @@ activeCafeFilterButton: {
     backgroundColor: '#315F72',
 },
     ///// CafeCard.js Styles////// 
-    card: {
+    cardContainer: {
         backgroundColor: '#fff',
        marginBottom: 20,
-      
+       marginTop: 0,
+       zindex: 1,
+       
     },
     cardImage: { 
         width: '100%',
