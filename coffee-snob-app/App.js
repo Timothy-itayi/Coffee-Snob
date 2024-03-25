@@ -53,7 +53,7 @@ export default function App() {
    <FilterProvider>
    <StatusBar style={styles.statusBar}/>
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ cardStyle: {backgroundColor: 'green',}}} >
+      <Stack.Navigator screenOptions={{ cardStyle: {backgroundColor: '#FFFDFC'}}} >
         <Stack.Screen
         name="Coffee Snob"
         component={Home}

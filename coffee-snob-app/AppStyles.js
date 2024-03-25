@@ -11,7 +11,7 @@ export default StyleSheet.create({
     ////// Home.js//////
    
     headerContainer: {
-        backgroundColor: 'blue',
+        backgroundColor: '#FFFDFC',
         marginVertical: 0,
         marginTop: 40,
         paddingBottom: -40,
