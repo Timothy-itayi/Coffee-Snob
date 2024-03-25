@@ -8,7 +8,10 @@ export const cafes = [
         totalReviews: '(521)',
         openingHours: 'Closed',
         closes: 'Open 8am',
-        location: '10 Victoria Street, Hamilton, 3204, New Zealand', 
+        street:'10 Victoria Street',
+        city: 'Hamilton',
+        country: 'New Zealand', 
+       
 
     },
     {
@@ -20,7 +23,10 @@ export const cafes = [
         totalReviews: '(531)',
         openingHours: 'Closed',
         closes: 'Opens 8am',
-        location: '321 Cedar Road, Sydney, NSW 2000, Australia', 
+        street: '321 Cedar Road',
+        city: 'Sydney',
+        country: 'Australia',
+        
     },
     {
         id: 3,
@@ -31,7 +37,12 @@ export const cafes = [
         totalReviews: '(321)',
         openingHours: 'Open',
         closes: 'Closes 3pm',
-        location: '987 Birch Lane, Manchester M14 6FQ, United Kingdom', 
+        street: '987 Birch Lane',
+        city: 'Manchester M14 6FQ',
+        country: 'United Kingdom',
+       
+     
+       
     },
     {
         id: 4,
@@ -42,7 +53,11 @@ export const cafes = [
         totalReviews: '(921)',
         openingHours: 'Closed', 
         closes: 'Open 7am', 
-        location: '1456 Pine Street, Portland, OR 97201, USA', 
+        street:'1456 Pine Street',
+        city:' Portland',
+        country:'USA',
+        
+      
     },
     {
         id: 5,
@@ -53,7 +68,10 @@ export const cafes = [
         totalReviews: '(513)',
         openingHours: 'Closed',
         closes: 'Opens 7am', 
-        location: '123 Elm Street, Springfield, IL 62701, USA', 
+        street:'123 Elm Street',
+        city:'Springfield,IL 62701',
+        country:'USA',
+       
     },
     {
         id: 6,
@@ -64,7 +82,9 @@ export const cafes = [
         totalReviews: '(111)',
         openingHours: 'Closed', 
         closes: 'Open 8am', 
-        location: '789 Maple Avenue, Oakville, ON L6J 2K9, Canada', 
+        street:'789 Maple Avenue',
+        city:'Oakville, ON L6J 2K9',
+        country:'Canada',
     },
 
 ]

@@ -42,6 +42,7 @@ export default StyleSheet.create({
     dropdownContainer: {
         marginRight: 16,
         marginLeft: 16,
+        
     },
     dropdownSelectedText: {
         fontFamily: 'Inter-Medium',

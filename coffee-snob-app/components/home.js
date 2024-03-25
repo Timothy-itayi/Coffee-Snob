@@ -41,7 +41,7 @@ const uniqueCities = [{cafes}];
          options={uniqueCities}
          selectedOption={selectedCity}
          onSelectOption={setSelectedCity}
-         
+        
          
         />
         <CafeFilter activeFilter={activeFilter} onChangeFilter={handleFilterChange} />
