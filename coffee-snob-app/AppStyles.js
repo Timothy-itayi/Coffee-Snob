@@ -24,7 +24,7 @@ export default StyleSheet.create({
        fontFamily: 'SlingBold',
        lineHeight: 80,
        margin: -70,
-       marginBottom: -10,
+       marginBottom: -50,
        paddingHorizontal: 90,
        letterSpacing: -1,
   
