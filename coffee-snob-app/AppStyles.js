@@ -11,7 +11,7 @@ export default StyleSheet.create({
     ////// Home.js//////
    
     headerContainer: {
-        backgroundColor: 'blue',
+        backgroundColor: '#FFFDFC',
         marginVertical: 0,
         marginTop: 40,
         paddingBottom: -40,
@@ -32,29 +32,36 @@ export default StyleSheet.create({
      
        lineHeight: 80,
        margin: -70,
-
        marginBottom: 10,
- 
        paddingHorizontal: 90,
        letterSpacing: -1,
      
        
     
     },
+    
     cafeFilterContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginVertical: 10,
         marginHorizontal: 40,
+  
        
     },
 
-cafeFilterButton: {
+    cafeFilterButton: {
     padding: 10 ,
     borderWidth: 1, 
     borderRadius: 20, 
+    
 },
-activeCafeFilterButton: {
+cafeFilterButtonText: {
+    fontFamily: 'Inter-SemiBold',
+},
+activeCafeFilterButtonText: {
+    fontFamily: 'Inter-SemiBold',
+},
+    activeCafeFilterButton: {
     backgroundColor: '#315F72',
 },
     ///// CafeCard.js Styles////// 
