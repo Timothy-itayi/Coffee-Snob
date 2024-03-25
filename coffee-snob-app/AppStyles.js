@@ -32,7 +32,9 @@ export default StyleSheet.create({
      
        lineHeight: 80,
        margin: -70,
+
        marginBottom: 10,
+ 
        paddingHorizontal: 90,
        letterSpacing: -1,
      
