@@ -64,7 +64,7 @@ export const cafes = [
         totalReviews: '(111)',
         openingHours: 'Closed', 
         closes: 'Open 8am', 
-        location: '789 Maple Avenue, Oakville, ON L6J 2K9, Canad', 
+        location: '789 Maple Avenue, Oakville, ON L6J 2K9, Canada', 
     },
 
 ]
