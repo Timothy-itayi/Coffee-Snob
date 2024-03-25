@@ -39,7 +39,14 @@ export default StyleSheet.create({
        
     
     },
-    
+    dropdownContainer: {
+        marginRight: 16,
+        marginLeft: 16,
+    },
+    dropdownSelectedText: {
+        fontFamily: 'Inter-Medium',
+    },
+// /// ///CAFE FILTER STYLING   ////
     cafeFilterContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
