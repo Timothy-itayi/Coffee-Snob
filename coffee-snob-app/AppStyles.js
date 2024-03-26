@@ -29,24 +29,19 @@ export default StyleSheet.create({
        letterSpacing: -1,
     },
     headerTitle: { 
-     
        lineHeight: 80,
        margin: -70,
        marginBottom: 10,
        paddingHorizontal: 90,
        letterSpacing: -1,
-     
-       
-    
     },
+///////DROPDOWN STYLING ///////////////    
     dropdownContainer: {
         marginRight: 16,
         marginLeft: 16,
         backgroundColor: 'green',
         borderBottomColor: 'gray',
-        
         marginTop: 20,
-
     },
     dropdownSelectedText: {
         fontFamily: 'Inter-Medium',
@@ -55,13 +50,6 @@ export default StyleSheet.create({
     dropdownText:{
         fontFamily: 'Inter-Medium',
         fontSize: 16,
-        marginRight: 16,
-        marginLeft: 16,
-        backgroundColor: 'yellow',
-        borderBottomColor: 'gray',
-      
-
-     
     },
 // /// ///CAFE FILTER STYLING   ////
     cafeFilterContainer: {

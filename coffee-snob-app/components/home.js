@@ -1,4 +1,4 @@
-import   React , {useState} from 'react';
+import   React, {useState}  from 'react';
 import { Animated, Text } from 'react-native';
 import CafeList from './cafeList';
 import HeaderTitle from './HeaderTitle';
@@ -17,20 +17,21 @@ const Home = () => {
     setActiveFilter(filter);
   };
 
-const handleOptionChange = (option) => {
-  setSelectedCity(option)
-}
-const formattedCities = [...new Set(cafes.map(cafe => cafe.city))];
-const uniqueCities = formattedCities.map((str , index) => ({ value: str, id: index + 1}))
-// console.log(uniqueCities)
+  const handleOptionChange = (option) => {
+    setSelectedCity(option);
+  };
 
-const renderOption = (option) => (
-  console.log(option),
-  <Text style={styles.dropdownText}>{option}</Text>
+  // Extracting unique city names from cafes
+  const formattedCities = [...new Set(cafes.map(cafes => cafes.city))];
+  // Mapping city names to array of objects with value and id properties
+  const uniqueCities = formattedCities.map((city , index) => ({ value: city, id: index + 1}))
+console.log(uniqueCities)
+
+const renderOption= (option) => (
+  <Text style={styles.dropdownText}>{option.value}</Text>
 )
-
-// const filteredCafes = selectedCity ? cafes.filter(cafe => cafe.city === selectedCity) : cafes;
-
+//Filter cafes based on selected city 
+const filteredCafes = selectedCity ? cafes.filter(cafe => cafe.city === selectedCity) : cafes;
   return (
     <>
       <Animated.View
@@ -40,22 +41,21 @@ const renderOption = (option) => (
         >
           <Text style={styles.headerText}>Coffee Snob.</Text>
         </HeaderTitle>
-        <DropDownSelector
-         options={uniqueCities}
-         selectedOption={selectedCity}
-         onOptionChange={handleOptionChange}
+     <DropDownSelector
+        options={uniqueCities}
+        selectedOption={selectedCity}
+        onOptionChange={handleOptionChange}
         renderOption={renderOption}
-         
         />
         <CafeFilter activeFilter={activeFilter} onChangeFilter={handleFilterChange} />
       </Animated.View>
 
       <CafeList
-       cafes={cafes}activeFilter={activeFilter}  style={styles.feed}
+       cafes={filteredCafes}activeFilter={activeFilter}  style={styles.feed}
     
       />
     </>
-  );
+  )
 };
 
 export default Home;
