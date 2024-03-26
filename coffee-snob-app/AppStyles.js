@@ -42,10 +42,26 @@ export default StyleSheet.create({
     dropdownContainer: {
         marginRight: 16,
         marginLeft: 16,
+        backgroundColor: 'green',
+        borderBottomColor: 'gray',
         
+        marginTop: 20,
+
     },
     dropdownSelectedText: {
         fontFamily: 'Inter-Medium',
+        fontSize: 16
+    },
+    dropdownText:{
+        fontFamily: 'Inter-Medium',
+        fontSize: 16,
+        marginRight: 16,
+        marginLeft: 16,
+        backgroundColor: 'yellow',
+        borderBottomColor: 'gray',
+      
+
+     
     },
 // /// ///CAFE FILTER STYLING   ////
     cafeFilterContainer: {
@@ -62,16 +78,16 @@ export default StyleSheet.create({
     borderWidth: 1, 
     borderRadius: 20, 
     
-},
-cafeFilterButtonText: {
-    fontFamily: 'Inter-SemiBold',
-},
-activeCafeFilterButtonText: {
-    fontFamily: 'Inter-SemiBold',
-},
-    activeCafeFilterButton: {
-    backgroundColor: '#315F72',
-},
+    },
+    cafeFilterButtonText: {
+        fontFamily: 'Inter-SemiBold',
+    },
+    activeCafeFilterButtonText: {
+        fontFamily: 'Inter-SemiBold',
+    },
+        activeCafeFilterButton: {
+        backgroundColor: '#315F72',
+    },
     ///// CafeCard.js Styles////// 
     cardContainer: {
         backgroundColor: '#fff',

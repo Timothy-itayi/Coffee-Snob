@@ -33,7 +33,7 @@ const CafeCard = ({ cafe }) => {
                />
                <Text style={styles.cardReviews}>{cafe.totalReviews}</Text>
                    </View>
-                <Text style={styles.cardLocation}>{cafe.street},{cafe.city},</Text>
+                <Text style={styles.cardLocation}>{cafe.street},{cafe.city}</Text>
                 <Text style={styles.cardLocation}>{cafe.country}</Text>
                 <View style={styles.hoursContainer}>
                 <Text style={[styles.cardOpeningHours, { color: cafe.openingHours === 'Open' ? '#637B00' : '#AD000A'}]}>{cafe.openingHours}</Text>
