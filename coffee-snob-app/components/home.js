@@ -23,13 +23,21 @@ const Home = () => {
 
   // Extracting unique city names from cafes
   const formattedCities = [...new Set(cafes.map(cafes => cafes.city))];
+
   // Mapping city names to array of objects with value and id properties
   const uniqueCities = formattedCities.map((city , index) => ({ value: city, id: index + 1}))
-console.log(uniqueCities)
 
-const renderOption= (option) => (
-  <Text style={styles.dropdownText}>{option.value}</Text>
-)
+
+const renderItem = (item, selected) => {
+  if(item) {
+    console.log(item.value)
+    return (
+      <Text style={styles.itemTextStyle}>{item.value}</Text>
+    )
+  }
+}
+
+
 //Filter cafes based on selected city 
 const filteredCafes = selectedCity ? cafes.filter(cafe => cafe.city === selectedCity) : cafes;
   return (
@@ -45,7 +53,9 @@ const filteredCafes = selectedCity ? cafes.filter(cafe => cafe.city === selected
         options={uniqueCities}
         selectedOption={selectedCity}
         onOptionChange={handleOptionChange}
-        renderOption={renderOption}
+        renderItem={renderItem}
+        itemContainerStyle={styles.dropdown}
+        itemTextStyle={styles.itemTextStyle}
         />
         <CafeFilter activeFilter={activeFilter} onChangeFilter={handleFilterChange} />
       </Animated.View>

@@ -35,21 +35,32 @@ export default StyleSheet.create({
        paddingHorizontal: 90,
        letterSpacing: -1,
     },
-///////DROPDOWN STYLING ///////////////    
+///////HOME DROPDOWN STYLING ///////////////    
     dropdownContainer: {
         marginRight: 16,
-        marginLeft: 16,
-        backgroundColor: 'green',
-        borderBottomColor: 'gray',
-        marginTop: 20,
+    
+      
     },
-    dropdownSelectedText: {
+    placeholderStyle: {
+        fontFamily: 'Inter-Medium',
+        fontSize: 20,
+    },
+    dropdown: {
+        height: 50,
+        borderColor: 'gray',
+        borderWidth: 0.5,
+        borderRadius: 8,
+    },
+    selectedTextStlye: {
         fontFamily: 'Inter-Medium',
         fontSize: 16
     },
-    dropdownText:{
+    
+    itemTextStyle:{
         fontFamily: 'Inter-Medium',
         fontSize: 16,
+     
+
     },
 // /// ///CAFE FILTER STYLING   ////
     cafeFilterContainer: {
