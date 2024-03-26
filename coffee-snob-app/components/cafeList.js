@@ -11,7 +11,10 @@ const CafeList = ({ cafes, activeFilter}) => {
     if (activeFilter === 'rating') {
       return cafes.sort((a, b) => b.rating - a.rating);
     } else if (activeFilter === 'location') {
-      return cafes.sort((a, b) => a.location.localeCompare(b.location))
+      return cafes.sort((a, b) => {
+        const locationA = `${a.city}, ${a.street}, ${a.country}`
+        const locationB = `${b.city}, ${b.street}, ${b.country}`
+      });
     } else if ( activeFilter === 'Open') {
       return cafes.filter(cafe => cafe.openingHours === 'Open')
     }

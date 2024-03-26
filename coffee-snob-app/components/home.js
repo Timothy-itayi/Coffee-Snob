@@ -17,16 +17,19 @@ const Home = () => {
     setActiveFilter(filter);
   };
 
-// const cities = cafes.map(cafe => {
-//   let locationParts = cafe.location.split(',');
-//   if (locationParts.length >= 2) {
-//     return locationParts[1].trim();
-//   } else {
-//     return Error("Location is not a string", Error);
-//   }
-// });
-const uniqueCities = [{cafes}];
+const handleOptionChange = (option) => {
+  setSelectedCity(option)
+}
+const formattedCities = [...new Set(cafes.map(cafe => cafe.city))];
+const uniqueCities = formattedCities.map((str , index) => ({ value: str, id: index + 1}))
+// console.log(uniqueCities)
 
+const renderOption = (option) => (
+  console.log(option),
+  <Text style={styles.dropdownText}>{option}</Text>
+)
+
+// const filteredCafes = selectedCity ? cafes.filter(cafe => cafe.city === selectedCity) : cafes;
 
   return (
     <>
@@ -40,18 +43,16 @@ const uniqueCities = [{cafes}];
         <DropDownSelector
          options={uniqueCities}
          selectedOption={selectedCity}
-         onSelectOption={setSelectedCity}
-        
+         onOptionChange={handleOptionChange}
+        renderOption={renderOption}
          
         />
         <CafeFilter activeFilter={activeFilter} onChangeFilter={handleFilterChange} />
       </Animated.View>
 
       <CafeList
-       cafes={cafes}activeFilter={activeFilter}
-
-        style={styles.feed}
-   
+       cafes={cafes}activeFilter={activeFilter}  style={styles.feed}
+    
       />
     </>
   );

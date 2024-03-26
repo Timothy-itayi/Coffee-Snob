@@ -10,11 +10,12 @@ const DropDownSelector = ({ options , selectedOption , onOptionChange}) => {
             <Dropdown style={styles.dropdownContainer}
             data={options}
             value={selectedOption}
-            onChangeText={onOptionChange}
-            placeholder={selectedOption || 'Select a city'}
-            renderRightIcon={(props) => (
+            onChange={onOptionChange}
+            placeholder='Select a city'
+            renderRightIcon={() => (
                 <AntDesign name="down" size={30} color='black'/>
             )}
+          
             />
         </View>
     )
