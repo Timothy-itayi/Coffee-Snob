@@ -1,24 +1,31 @@
-import   React, {useState}  from 'react';
-import { Animated, Text } from 'react-native';
+import   React, {useState, useEffect}  from 'react';
+import { Animated, Text , View} from 'react-native';
 import CafeList from './cafeList';
 import HeaderTitle from './HeaderTitle';
 import styles from '../AppStyles';
 import CafeFilter from './cafeFilter';
 import {cafes} from '../data/CafeData';
 import { useFilter } from './filterContext';
-import DropDownSelector from './DropDownSelector';
+import  CustomModalSelector from './CustomModalSelector';
  
 const Home = () => { 
  const [selectedCity , setSelectedCity] = useState(null);
-  const { activeFilter , setActiveFilter } = useFilter(null);
+ const [prevSelectedCity, setPrevSelectedCity ] = useState(null);
+ const [selectedCityMessage, setSelectedCityMessage] = useState(null)
+ const { activeFilter , setActiveFilter } = useFilter(null);
 
 
+ 
   const handleFilterChange = (filter) => {
     setActiveFilter(filter);
   };
 
   const handleOptionChange = (option) => {
-    setSelectedCity(option);
+
+    if (option !== prevSelectedCity){
+      setSelectedCity(option);
+      setSelectedCityMessage( `Successfully selected ${option}`);
+    }
   };
 
   // Extracting unique city names from cafes
@@ -28,11 +35,18 @@ const Home = () => {
   const uniqueCities = formattedCities.map((city , index) => ({ value: city, id: index + 1}))
 
 
-const renderItem = (item, selected) => {
+const getSelectedItem = (item, selected) => {
   if(item) {
-    console.log(item.value)
+    
+        const itemTextStyle = selected ? [styles.modalPickerSelectStyle, {fontWeight: 'Bold'}] : styles.modalPickerSelectStyle;
+
     return (
-      <Text style={styles.itemTextStyle}>{item.value}</Text>
+      <>
+     <View style={styles.itemTextContainer}>
+      <Text style={styles.itemTextStyle} >{item.label}</Text>
+      </View>
+   
+      </>
     )
   }
 }
@@ -40,6 +54,7 @@ const renderItem = (item, selected) => {
 
 //Filter cafes based on selected city 
 const filteredCafes = selectedCity ? cafes.filter(cafe => cafe.city === selectedCity) : cafes;
+console.log("DropDownSelector props:",  selectedCity );
   return (
     <>
       <Animated.View
@@ -49,14 +64,14 @@ const filteredCafes = selectedCity ? cafes.filter(cafe => cafe.city === selected
         >
           <Text style={styles.headerText}>Coffee Snob.</Text>
         </HeaderTitle>
-     <DropDownSelector
+     <CustomModalSelector
         options={uniqueCities}
         selectedOption={selectedCity}
         onOptionChange={handleOptionChange}
-        renderItem={renderItem}
-        itemContainerStyle={styles.dropdown}
-        itemTextStyle={styles.itemTextStyle}
+        getSelectedItem={getSelectedItem}
+        
         />
+       {selectedCity && <Text style={styles.selectedCityMessage}>{selectedCityMessage}</Text>}
         <CafeFilter activeFilter={activeFilter} onChangeFilter={handleFilterChange} />
       </Animated.View>
 

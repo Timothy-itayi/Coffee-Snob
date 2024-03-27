@@ -54,7 +54,7 @@ export const cafes = [
         openingHours: 'Closed', 
         closes: 'Open 7am', 
         street:'1456 Pine Street',
-        city:' Portland',
+        city:'Portland',
         country:'USA',
         
       

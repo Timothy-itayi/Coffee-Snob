@@ -34,33 +34,53 @@ export default StyleSheet.create({
        marginBottom: 10,
        paddingHorizontal: 90,
        letterSpacing: -1,
+       
     },
 ///////HOME DROPDOWN STYLING ///////////////    
-    dropdownContainer: {
-        marginRight: 16,
-    
-      
+    d: {
+       marginLeft: -20,
+       borderTopWidth: 1, 
+       borderBottomWidth: 1,
+       borderColor: 'grey',
+       backgroundColor: '#FFFDFC',
+       marginRight: -20, 
+       marginTop: 16,
+       marginBottom: 16,
+  
     },
-    placeholderStyle: {
-        fontFamily: 'Inter-Medium',
+    modalPickerTextInput: {
+        fontFamily: 'Inter-SemiBold', 
         fontSize: 20,
+        marginRight: 10,
+        marginLeft: 20,
     },
-    dropdown: {
-        height: 50,
-        borderColor: 'gray',
-        borderWidth: 0.5,
-        borderRadius: 8,
+    
+    modalPickerSelectStyle: {
+        fontFamily: 'Inter-SemiBold',
+        fontSize: 16,
+
     },
-    selectedTextStlye: {
+    optionStyle: {
+        marginRight: 16,
+        marginLeft: 16,
+        marginBottom: 20,
+        marginTop: 20,
+    },
+    selecteditemTextStyle: {
+        fontFamily: 'Inter-SemiBold',
+        fontSize: 16,
+        
+    },
+    selectedCityMessage:{
         fontFamily: 'Inter-Medium',
-        fontSize: 16
+        fontSize: 15,
     },
     
     itemTextStyle:{
         fontFamily: 'Inter-Medium',
-        fontSize: 16,
-     
-
+        fontSize: 20,
+      
+       
     },
 // /// ///CAFE FILTER STYLING   ////
     cafeFilterContainer: {
