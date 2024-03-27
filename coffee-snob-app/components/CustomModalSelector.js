@@ -5,7 +5,7 @@ import styles from '../AppStyles';
 
  const CustomModalSelector = ({ options , selectedOption, onOptionChange , getSelectedItem}) => {
 const [value, setValue] = useState(null);
-const [showSelected, setShowSelected] = useState(false);
+
 useEffect(() => {
     setValue(selectedOption);
 }, [selectedOption])
@@ -26,9 +26,9 @@ const modifiedOptions = options.map(option => ({
             onChange={(option) =>{
                 setValue(option.label)
                 onOptionChange(option.label);
-                setShowSelected(true)
+               
             }} 
-            onModalClose={() => setShowSelected(false)}
+
             cancelText='Cancel'
             selectStyle={styles.modalPickerSelectStyle}
             selectTextStyle={styles.modalPickerSelectStyle}

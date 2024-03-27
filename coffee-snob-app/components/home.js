@@ -1,5 +1,5 @@
 import   React, {useState, useEffect}  from 'react';
-import { Animated, Text , View} from 'react-native';
+import { Animated, Text , Button} from 'react-native';
 import CafeList from './cafeList';
 import HeaderTitle from './HeaderTitle';
 import styles from '../AppStyles';
@@ -21,40 +21,16 @@ const Home = () => {
   };
 
   const handleOptionChange = (option) => {
-
-    if (option !== prevSelectedCity){
       setSelectedCity(option);
       setSelectedCityMessage( `Successfully selected ${option}`);
-    }
+  
   };
 
-  // Extracting unique city names from cafes
-  const formattedCities = [...new Set(cafes.map(cafes => cafes.city))];
-
-  // Mapping city names to array of objects with value and id properties
-  const uniqueCities = formattedCities.map((city , index) => ({ value: city, id: index + 1}))
-
-
-const getSelectedItem = (item, selected) => {
-  if(item) {
-    
-        const itemTextStyle = selected ? [styles.modalPickerSelectStyle, {fontWeight: 'Bold'}] : styles.modalPickerSelectStyle;
-
-    return (
-      <>
-     <View style={styles.itemTextContainer}>
-      <Text style={styles.itemTextStyle} >{item.label}</Text>
-      </View>
-   
-      </>
-    )
+  const resetFilters = () => {
+    setActiveFilter(null);
+    setSelectedCity(null);
   }
-}
 
-
-//Filter cafes based on selected city 
-const filteredCafes = selectedCity ? cafes.filter(cafe => cafe.city === selectedCity) : cafes;
-console.log("DropDownSelector props:",  selectedCity );
   return (
     <>
       <Animated.View
@@ -65,18 +41,19 @@ console.log("DropDownSelector props:",  selectedCity );
           <Text style={styles.headerText}>Coffee Snob.</Text>
         </HeaderTitle>
      <CustomModalSelector
-        options={uniqueCities}
+        options={cafes.map((cafe) => ({value: cafe.city, id: cafe.city}))}
         selectedOption={selectedCity}
         onOptionChange={handleOptionChange}
-        getSelectedItem={getSelectedItem}
+        getSelectedItem={() => {}}
         
         />
        {selectedCity && <Text style={styles.selectedCityMessage}>{selectedCityMessage}</Text>}
+       <Button title='Reset Filters' onPress={resetFilters} />
         <CafeFilter activeFilter={activeFilter} onChangeFilter={handleFilterChange} />
       </Animated.View>
 
       <CafeList
-       cafes={filteredCafes}activeFilter={activeFilter}  style={styles.feed}
+       cafes={cafes} selectedCity={selectedCity}activeFilter={activeFilter}  style={styles.feed}
     
       />
     </>

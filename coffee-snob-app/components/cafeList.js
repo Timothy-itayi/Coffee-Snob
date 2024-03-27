@@ -1,43 +1,54 @@
-import React , {useMemo} from 'react';
-import { Animated, View} from 'react-native';
-
+import React, { useMemo } from 'react';
+import { Animated, View } from 'react-native';
 import CafeCard from './CafeCard';
-
 import styles from '../AppStyles';
 
-const CafeList = ({ cafes, activeFilter}) => {
+const CafeList = ({ cafes, activeFilter, selectedCity }) => {
 
-  const filterCafes = useMemo(() => {
+  
+  const filteredCafes = useMemo(() => {
+    let filtered = cafes.filter((cafe) => {
+      const cityMatch = selectedCity ? cafe.city === selectedCity : true;
+      let filterMatch = true;
+
+      if (activeFilter === 'Rating') {
+        filterMatch = cafe.rating <= 5;
+      } else if (activeFilter === 'Reviews') {
+        filterMatch = parseInt(cafe.totalReviews.replace(/\D/g, ''), 10) <= 1000;
+      } else if (activeFilter === 'Open') {
+        filterMatch = cafe.openingHours === 'Open';
+      }
+
+      return cityMatch && filterMatch;
+    });
+
+    // Apply sorting if activeFilter is 'rating' or 'Reviews'
     if (activeFilter === 'rating') {
-      return cafes.sort((a, b) => b.rating - a.rating);
-    } else if (activeFilter === 'location') {
-      return cafes.sort((a, b) => {
-        const locationA = `${a.city}, ${a.street}, ${a.country}`
-        const locationB = `${b.city}, ${b.street}, ${b.country}`
+      filtered = filtered.sort((a, b) => b.rating - a.rating);
+    } else if (activeFilter === 'Reviews') {
+      filtered = filtered.sort((a, b) => {
+        const aReviews = parseInt(a.totalReviews.replace(/\D/g, ''), 10);
+        const bReviews = parseInt(b.totalReviews.replace(/\D/g, ''), 10);
+        return bReviews - aReviews;
       });
-    } else if ( activeFilter === 'Open') {
-      return cafes.filter(cafe => cafe.openingHours === 'Open')
+      
     }
-    return cafes.slice();
-  }, [cafes, activeFilter]);
+
+    return filtered;
+  }, [cafes, selectedCity, activeFilter]);
 
   return (
-   
-      <Animated.FlatList
-        data={filterCafes}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View>
-            <CafeCard cafe={item} />
-          </View>
-        )}
-        contentContainerStyle={styles.listContent}
-     
-        contentLength={CafeList}
-      />
-    
+    <Animated.FlatList
+      data={filteredCafes}
+      keyExtractor={(item) => String(item.id)}
+      renderItem={({ item }) => (
+        <View>
+          <CafeCard cafe={item} />
+        </View>
+      )}
+      contentContainerStyle={styles.listContent}
+    />
   );
-}
+};
 
 export default CafeList;
-
