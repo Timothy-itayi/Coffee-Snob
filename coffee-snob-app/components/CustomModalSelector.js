@@ -18,9 +18,9 @@ const modifiedOptions = options.map(option => ({
 
     return (
 
-        <View  style={styles.dropdownContainer} >
+        <View >
             <ModalSelector 
-            placeholderStyle={styles.placeholderStyle}
+           
             data={modifiedOptions}
             initValue='Select a city'
             onChange={(option) =>{
@@ -30,18 +30,17 @@ const modifiedOptions = options.map(option => ({
             }} 
 
             cancelText='Cancel'
-            selectStyle={styles.modalPickerSelectStyle}
-            selectTextStyle={styles.modalPickerSelectStyle}
-            overlayStyle={styles.modalPickerSelectStyle}
-            optionStyle={styles.modalPickerOptionStyle}
-            optionTextStyle={styles.modalPickerOptionTextStyle}
+   
+            optionTextStyle={{fontFamily: 'Inter-SemiBold'}}
+            
             >
            <TextInput
-           style={styles.modalPickerTextInput}
+      
            editable={false}
            value={value}
            placeholder='Select a city' 
-      
+           style={{fontFamily: 'Inter-SemiBold', fontSize: 20}}
+           placeholderTextColor='black' 
           />
             </ModalSelector>
         </View>

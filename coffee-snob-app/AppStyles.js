@@ -36,66 +36,50 @@ export default StyleSheet.create({
        letterSpacing: -1,
        
     },
-///////HOME DROPDOWN STYLING ///////////////    
-    d: {
-       marginLeft: -20,
-       borderTopWidth: 1, 
-       borderBottomWidth: 1,
-       borderColor: 'grey',
-       backgroundColor: '#FFFDFC',
-       marginRight: -20, 
-       marginTop: 16,
-       marginBottom: 16,
-  
-    },
-    modalPickerTextInput: {
-        fontFamily: 'Inter-SemiBold', 
-        fontSize: 20,
-        marginRight: 10,
-        marginLeft: 20,
-    },
+///////Modal Selector STYLING ///////////////    
+rowContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20, // Adjust as needed
     
-    modalPickerSelectStyle: {
-        fontFamily: 'Inter-SemiBold',
-        fontSize: 16,
-
-    },
-    optionStyle: {
-        marginRight: 16,
-        marginLeft: 16,
-        marginBottom: 20,
-        marginTop: 20,
-    },
-    selecteditemTextStyle: {
-        fontFamily: 'Inter-SemiBold',
-        fontSize: 16,
-        
-    },
-    selectedCityMessage:{
-        fontFamily: 'Inter-Medium',
-        fontSize: 15,
-    },
-    
-    itemTextStyle:{
-        fontFamily: 'Inter-Medium',
-        fontSize: 20,
+  },
+    modalContainer: {
+  flex: 1,
+     
       
-       
     },
+    modalPickerSelectStyle:{
+    fontFamily: 'Inter-SemiBold',
+  },
+
+  selectedCityMessage:{
+    marginTop: -20,
+    marginBottom: 15,
+
+  },
 // /// ///CAFE FILTER STYLING   ////
+    resetFilterButton:{
+       color: 'black',
+      
+    },
+    buttonText: {
+        fontFamily: 'Inter-SemiBold',
+        fontSize: 20
+    },
     cafeFilterContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginVertical: 10,
+        justifyContent: 'space-evenly',
+        marginVertical: 2,
         marginHorizontal: 40,
-  
+        marginTop: -10,
        
     },
 
     cafeFilterButton: {
     padding: 10 ,
     borderWidth: 1, 
-    borderRadius: 20, 
+    borderRadius: 30, 
     
     },
     cafeFilterButtonText: {
