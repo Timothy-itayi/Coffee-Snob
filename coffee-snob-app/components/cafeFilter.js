@@ -17,9 +17,9 @@ const CafeFilter = ({ activeFilter , onChangeFilter  }) => {
                 <Text  style={[styles.cafeFilterButtonText, activeFilter === 'Open' && styles.activeCafeFilterButtonText]}>Open</Text>
             </TouchableOpacity>
             <TouchableOpacity
-            style={[styles.cafeFilterButton, activeFilter === 'location' && styles.activeCafeFilterButton]}
-            onPress={() => onChangeFilter('location')}>
-                <Text  style={[styles.cafeFilterButtonText, activeFilter === 'location' && styles.activeCafeFilterButtonText]}>location</Text>
+            style={[styles.cafeFilterButton, activeFilter === 'Reviews' && styles.activeCafeFilterButton]}
+            onPress={() => onChangeFilter('Reviews')}>
+                <Text  style={[styles.cafeFilterButtonText, activeFilter === 'Reviews' && styles.activeCafeFilterButtonText]}>Reviews</Text>
             </TouchableOpacity>
         </View>
     );
