@@ -4,9 +4,13 @@ import CafeList from '../frontend-components/cafeList';
 import HeaderTitle from '../frontend-components/HeaderTitle';
 import styles from '../AppStyles';
 import {cafes} from '../data/CafeData';
-
 import  CustomModalSelector from '../frontend-components/CustomModalSelector';
 import CustomButton from '../frontend-components/customButton';
+import SignUp from '../authentication/signup';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import {Ionicons} from '@expo/vector-icons';
+
+
 const Home = () => { 
  const [selectedCity , setSelectedCity] = useState(null);
 
@@ -20,17 +24,20 @@ const Home = () => {
 
     setSelectedCity(null);
   }
-
+  // style={styles.HeaderRowContainer}
   return (
     <>
       <Animated.View
-       style={styles.headerContainer}
-      
+       style={styles.headerRowContainer}
       >
+     
         <HeaderTitle   style={styles.headerTitleContainer}  >
-      
           <Text style={styles.headerText}>Coffee Snob.</Text>
         </HeaderTitle>
+ 
+      
+       
+        
         <View style={styles.rowContainer} >
           <CustomModalSelector
                 options={cafes.map((cafe) => ({value: cafe.city, id: cafe.city}))}
