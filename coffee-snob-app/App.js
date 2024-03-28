@@ -2,13 +2,13 @@
 import React , {useEffect , useState } from 'react';
 import * as Font from 'expo-font';
 import { StatusBar } from 'expo-status-bar'
-import Home  from './components/home';
+import Home  from './pages/home';
 import {Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { registerRootComponent } from 'expo';
 import styles from './AppStyles'
-import { FilterProvider} from './components/filterContext';
+import { FilterProvider} from './backend-components/filterContext';
 const Stack = createStackNavigator();
 
 

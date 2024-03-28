@@ -1,13 +1,13 @@
 import   React, {useState}  from 'react';
 import { Animated, Text , Button, View } from 'react-native';
-import CafeList from './cafeList';
-import HeaderTitle from './HeaderTitle';
+import CafeList from '../frontend-components/cafeList';
+import HeaderTitle from '../frontend-components/HeaderTitle';
 import styles from '../AppStyles';
-import CafeFilter from './cafeFilter';
+import CafeFilter from '../frontend-components/cafeFilter';
 import {cafes} from '../data/CafeData';
-import { useFilter } from './filterContext';
-import  CustomModalSelector from './CustomModalSelector';
-import CustomButton from './customButton';
+import { useFilter } from '../backend-components/filterContext';
+import  CustomModalSelector from '../frontend-components/CustomModalSelector';
+import CustomButton from '../frontend-components/customButton';
 const Home = () => { 
  const [selectedCity , setSelectedCity] = useState(null);
  const [selectedCityMessage, setSelectedCityMessage] = useState(null)
