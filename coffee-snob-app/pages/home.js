@@ -6,9 +6,7 @@ import styles from '../AppStyles';
 import {cafes} from '../data/CafeData';
 import  CustomModalSelector from '../frontend-components/CustomModalSelector';
 import CustomButton from '../frontend-components/customButton';
-import SignUp from '../authentication/signup';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import {Ionicons} from '@expo/vector-icons';
+
 
 
 const Home = () => { 

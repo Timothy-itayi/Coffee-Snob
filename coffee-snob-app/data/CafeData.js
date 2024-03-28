@@ -1,7 +1,7 @@
 export const cafes = [
     {
         id: 1,
-        image: require('../assets/botanic.jpeg'),
+        image: require('../assets/cafeImages/botanic.jpeg'),
         name: 'Botanic Brews',
         description: 'Rated for their food ',
         rating: 4.3, 
@@ -16,7 +16,7 @@ export const cafes = [
     },
     {
         id: 2,
-        image: require('../assets/rustic.avif'),
+        image: require('../assets/cafeImages/rustic.avif'),
         name: 'Barnwood Bistro',
         description: 'Rated for their atmosphere',
         rating: 3.5, 
@@ -30,7 +30,7 @@ export const cafes = [
     },
     {
         id: 3,
-        image: require('../assets/white.jpeg'),
+        image: require('../assets/cafeImages/white.jpeg'),
         name: 'Marble Cafe',
         description: 'Rated white marble aesthetic.',
         rating: 5.0, 
@@ -46,7 +46,7 @@ export const cafes = [
     },
     {
         id: 4,
-        image: require('../assets/modern.jpeg'),
+        image: require('../assets/cafeImages/modern.jpeg'),
         name: 'Metro Cafe',
         description: 'Rated for their staff',
         rating: 3.9, 
@@ -61,7 +61,7 @@ export const cafes = [
     },
     {
         id: 5,
-        image: require('../assets/old.jpeg'),
+        image: require('../assets/cafeImages/old.jpeg'),
         name: 'Fusion Cafe',
         description: 'Rated for their baked goods and espresso',
         rating: 4.0, 
@@ -75,7 +75,7 @@ export const cafes = [
     },
     {
         id: 6,
-        image: require('../assets/hip.jpeg'),
+        image: require('../assets/cafeImages/hip.jpeg'),
         name: 'Archie,s Cafe',
         description: 'Rated for their vibe',
         rating: 4.6, 
