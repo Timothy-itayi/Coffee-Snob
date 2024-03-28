@@ -9,8 +9,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { registerRootComponent } from 'expo';
 import styles from './AppStyles';
-import  SignUp from './authentication/signup';
+import SignUp from './authentication/signup'
 import UserProfile from './pages/userprofile';
+import {Ionicons} from '@expo/vector-icons';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -51,7 +52,7 @@ export default function App() {
 
     return null;
   }
-  
+
   
   return (
   
@@ -60,10 +61,28 @@ export default function App() {
  
         <NavigationContainer >
           <Tab.Navigator
+          screenOptions={({ route, focused}) => ({
+           
+            tabBarIcon: ({ color, size}) => {
+              let iconName;
+
+              if (route.name === 'Home'){
+                iconName = focused ? 'home' : 'home-outline';
+              } else if ( route.name === 'Profile') {
+                iconName = focused ? 'person' : 'person-outline';
+              } else if ( route.name === 'SignUp') {
+                iconName = 'person-add'; 
+              }
+
+              return <Ionicons name={iconName} size={size} color={color} />;
+            }
+          
+           
+          })}
          >
             <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Signup" component={SignUp}/>
             <Tab.Screen name="Profile" component={UserProfile}/>
+            <Tab.Screen name="SignUp" component={SignUp}/>
           </Tab.Navigator>
         </NavigationContainer>
     
@@ -71,6 +90,7 @@ export default function App() {
 
   );
 }
+
 
 
 

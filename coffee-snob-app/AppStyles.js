@@ -10,15 +10,18 @@ export default StyleSheet.create({
  
     ////// Home.js//////
    ////'#FFFDFC'
-   headerContainer:{
+   headerRowContainer:{
     backgroundColor: '#fff',
+    marginTop: 0,
+   
+    
    },
     headerTitleContainer: {
   
         marginVertical: 0,
         marginTop: 0,
         paddingBottom: 0,
-        paddingTop: 5,
+        paddingTop: 4,
        paddingLeft: 5,
         
     },
@@ -30,7 +33,14 @@ export default StyleSheet.create({
        fontFamily: 'SlingBold',
        letterSpacing: -1, 
     },
-///////Modal Selector STYLING ///////////////    
+///////Modal Selector STYLING /////////////// 
+HeaderRowContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+     // Adjust as needed
+    marginleft: 5,
+  },   
 rowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
