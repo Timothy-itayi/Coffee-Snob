@@ -5,18 +5,21 @@ import { StatusBar } from 'expo-status-bar'
 import Home  from './pages/home';
 import {Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { registerRootComponent } from 'expo';
 import styles from './AppStyles'
-import { FilterProvider} from './backend-components/filterContext';
-const Stack = createStackNavigator();
 
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 
 registerRootComponent(App);
 export default function App() {
 
   const [fontsLoaded, setFontsLoaded] = useState(false);
+
   const [errorLoadingFonts, setErrorLoadingFonts] = useState(false);
 
   useEffect(() => {
@@ -48,26 +51,22 @@ export default function App() {
 
     return null;
   }
-
+  
+  
   return (
-   <FilterProvider>
+  
+<>
    <StatusBar style={styles.statusBar}/>
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ cardStyle: {backgroundColor: '#FFFDFC'}}} >
-        <Stack.Screen
-        name="Coffee Snob"
-        component={Home}
-        
-        options={{
-          headerTransparent: false,
-          headerShown: false,
-          
-        }}
-       
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-</FilterProvider>
+ 
+        <NavigationContainer >
+          <Tab.Navigator
+         >
+            <Tab.Screen name="Home" component={Home} />
+          </Tab.Navigator>
+        </NavigationContainer>
+    
+</>
+
   );
 }
 
