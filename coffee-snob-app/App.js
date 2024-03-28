@@ -3,14 +3,14 @@ import React , {useEffect , useState } from 'react';
 import * as Font from 'expo-font';
 import { StatusBar } from 'expo-status-bar'
 import Home  from './pages/home';
-import {Text} from 'react-native';
+import  {Text} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { registerRootComponent } from 'expo';
-import styles from './AppStyles'
-
-
+import styles from './AppStyles';
+import  SignUp from './authentication/signup';
+import UserProfile from './pages/userprofile';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -62,6 +62,8 @@ export default function App() {
           <Tab.Navigator
          >
             <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Signup" component={SignUp}/>
+            <Tab.Screen name="Profile" component={UserProfile}/>
           </Tab.Navigator>
         </NavigationContainer>
     
