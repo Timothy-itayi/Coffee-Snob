@@ -9,40 +9,34 @@ export default StyleSheet.create({
     },
  
     ////// Home.js//////
-   
-    headerContainer: {
-        backgroundColor: '#FFFDFC',
+   ////'#FFFDFC'
+   headerContainer:{
+    backgroundColor: '#fff',
+   },
+    headerTitleContainer: {
+  
         marginVertical: 0,
-        marginTop: 40,
-        paddingBottom: -40,
-        paddingTop: 16,
-        marginHorizontal: 16,
+        marginTop: 0,
+        paddingBottom: 0,
+        paddingTop: 5,
+       paddingLeft: 5,
         
     },
 
     headerText: {
         color: 'black',
         fontSize: 30,
-        fontWeight: '100',
-       textAlign: 'left',
+        paddingLeft: 16,
        fontFamily: 'SlingBold',
-       letterSpacing: -1,
-    },
-    headerTitle: { 
-       lineHeight: 80,
-       margin: -70,
-       marginBottom: 10,
-       paddingHorizontal: 90,
-       letterSpacing: -1,
-       
+       letterSpacing: -1, 
     },
 ///////Modal Selector STYLING ///////////////    
 rowContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20, // Adjust as needed
-    
+    marginBottom: 5, // Adjust as needed
+    marginLeft: 10,
   },
     modalContainer: {
   flex: 1,
@@ -51,6 +45,7 @@ rowContainer: {
     },
     modalPickerSelectStyle:{
     fontFamily: 'Inter-SemiBold',
+    
   },
 
   selectedCityMessage:{
@@ -59,13 +54,12 @@ rowContainer: {
 
   },
 // /// ///CAFE FILTER STYLING   ////
-    resetFilterButton:{
-       color: 'black',
-      
-    },
+   
     buttonText: {
         fontFamily: 'Inter-SemiBold',
-        fontSize: 20
+        fontSize: 20,
+        color: 'grey',
+        marginRight: 16,
     },
     cafeFilterContainer: {
         flexDirection: 'row',
@@ -97,7 +91,7 @@ rowContainer: {
        marginBottom: 20,
        marginTop: 0,
        zindex: 1,
-       
+     
     },
     cardImage: { 
         width: '100%',
@@ -205,7 +199,7 @@ rowContainer: {
  
  
     listContent: {
-    
+       backgroundColor: '#fff',
         paddingBottom: 200,
     },
 });
