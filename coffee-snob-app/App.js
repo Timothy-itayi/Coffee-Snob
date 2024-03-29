@@ -11,6 +11,7 @@ import { registerRootComponent } from 'expo';
 import styles from './AppStyles';
 import SignUp from './authentication/signup'
 import UserProfile from './pages/userprofile';
+import analytics from '@react-native-firebase/analytics'; 
 import {Ionicons} from '@expo/vector-icons';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -43,6 +44,11 @@ export default function App() {
     } 
 
     loadFonts();
+  }, []);
+
+  useEffect(() => {
+    // Initialize Firebase analytics when the app starts
+    analytics().setAnalyticsCollectionEnabled(true);
   }, []);
 
   if (!fontsLoaded) {

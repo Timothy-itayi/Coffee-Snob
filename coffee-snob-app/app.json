@@ -16,7 +16,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.CoffeeSnob"
+      "bundleIdentifier": "com.anonymous.CoffeeSnob",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
@@ -27,10 +28,36 @@
         "favicon": "./assets/favicon.png"
       },
       "plugins": [
-        "expo-font"
+        "expo-font",
+        "@react-native-firebase/app",
+        [
+          "expo-build-properties",
+          {
+            "ios": {
+              "useFrameworks": "static"
+            }
+          }
+        ]
       ],
-      "package": "com.anonymous.CoffeeSnob"
+      "package": "com.anonymous.CoffeeSnob",
+      "googleServicesFile": "./google-services.json"
+    },
+    "plugins": [
+      "@react-native-firebase/app",
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "5fb49691-012f-40c3-8d90-ecbf9c09ad64"
+      }
     }
   }
 }
-
